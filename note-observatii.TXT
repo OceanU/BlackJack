@@ -1,0 +1,5 @@
+1)la mana dealer-ului cand are servit A 10 nu ii scrie blackjack
+2)cand exista situatia de a avea mai multi asi in aceiasi mana apare o neconcordanta si scorul nu se mai calculeaza corect in sensul ca se ia in considerare doar cea mai mica varianta a scorului (bug1.jpg)
+3) in situatia in care valoarea mainii player-ului este mica iar valoarea mainii dealer-ului o egaleaza, ramane egal chiar daca este loc de imbunataire. de consultat regulamaentul pt a vedea cine castiga in situatia asta (bug2.jpg)
+4) add action on blackjack and others
+5) bug3.jpg desi mai era loc de imbunatatire, dealer-ul nu a mai tras o carte

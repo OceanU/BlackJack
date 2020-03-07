@@ -1,0 +1,167 @@
+html,body{
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+
+}
+
+body {
+		background-image: : url('bjtab.jpeg');
+	background-size: cover;
+}
+/*
+#table {
+	height: 100%;
+	width: 80%;
+	background-color: green;
+	margin: auto;
+	display: grid;
+	grid-template-columns: 30% 20% 20% 30%;
+  	grid-template-rows: 25% auto 25%;
+}
+
+#card,#card1 {
+	height: 120px;
+	width: 80px;
+	background-color: blue;
+	border: 4px solid white;
+}
+
+.newCardPositionDealer {
+	grid-column-start: 4;
+  	grid-column-end: 5;
+  	grid-row-start: 1;
+  	grid-row-end: 2;
+  	margin: auto;
+}
+
+.newCardPosition,#container {
+	grid-column-start: 3;
+  	grid-column-end: 4;
+  	grid-row-start: 2;
+  	grid-row-end: 3;
+
+}
+
+#container {
+	height: 400px;
+	width: 200px;
+	background-color: red;
+}
+
+#container2 {
+	grid-column-start: 4;
+  	grid-column-end: 5;
+  	grid-row-start: 1;
+  	grid-row-end: 2;
+}
+
+
+
+.c1,.c2,.c3,.c4 {
+	margin: auto;
+}
+
+.dealerHidenCard {
+	display: none;
+}
+
+.c1 {
+	grid-column-start: 2;
+  	grid-column-end: 3;
+  	grid-row-start: 1;
+  	grid-row-end: 2;
+}
+
+.c2 {
+	grid-column-start: 3;
+  	grid-column-end: 4;
+  	grid-row-start: 1;
+  	grid-row-end: 2;
+}
+
+.c3 {
+	grid-column-start: 2;
+  	grid-column-end: 3;
+  	grid-row-start: 3;
+  	grid-row-end: 4;
+}
+
+.c4 {
+	grid-column-start: 3;
+  	grid-column-end: 4;
+  	grid-row-start: 3;
+  	grid-row-end: 4;
+
+}
+
+.c5 {
+	margin-left: 0;
+}
+
+.bstart,.breset {
+	grid-column-start: 2;
+  	grid-column-end: 4;
+  	grid-row-start: 2;
+  	grid-row-end: 3;
+  	margin: auto;
+  	height: 80px;
+	width: 150px;
+	border-radius: 25%;
+	font-size: 20px;	
+}
+.breset {
+	display: none;
+	z-index: 1;
+}
+
+
+.bhit,.bstop {
+	width: 60px;
+	height: 60px;
+	border-radius: 25%;
+	background-color: red;
+	margin: auto;
+}
+
+.bhit {
+	display: none;
+	grid-column-start: 1;
+  	grid-column-end: 2;
+  	grid-row-start: 3;
+  	grid-row-end: 4;
+}
+
+.bstop {
+	display: none;
+	grid-column-start: 4;
+  	grid-column-end: 5;
+  	grid-row-start: 3;
+  	grid-row-end: 4;
+}
+
+#pScore {
+	grid-column-start: 1;
+  	grid-column-end: 2;
+  	grid-row-start: 3;
+  	grid-row-end: 4;
+  	margin-top: -10px;
+}*/
+..............................
+/*#pScoreNum {
+	text-align: center;
+}
+
+#result {
+	grid-column-start: 2;
+  	grid-column-end: 4;
+  	grid-row-start: 2;
+  	grid-row-end: 3;
+  	height: 100px;
+}
+
+#text {
+	text-align: center;
+	color: white;
+}*/
