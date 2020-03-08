@@ -1,0 +1,33 @@
+html,body {
+/*	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;*/
+}
+
+html { 
+/*  background: url(img/patern.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;*/
+  border: 5px red solid;
+  height: 100%;
+
+}
+
+body {
+	border: 5px blue solid;
+	height: 100%;
+}
+
+
+
+#table {
+/*	height: 80%;
+	width: 80%;*/
+/*	margin: auto;*/
+/*	display: grid;
+	grid-template-columns: 30% 20% 20% 30%;
+  	grid-template-rows: 25% auto 25%;*/
+}

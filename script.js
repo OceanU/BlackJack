@@ -27,7 +27,7 @@
 let counter = 0
 
 function shot() {
-	counter = 0;
+    counter = 0;
 	let shootACard = Math.floor((Math.random() * 52) + 1);
 	
 	if ((shootACard < 37) && (shootACard > 4)){
@@ -125,7 +125,7 @@ function shot() {
 	  	return "3 s"
 	  	break;
 	       case (15):
-	  	return "4"  
+	  	return "4 s"  
 	  	break;
 	       case (19):
 	  	return "5 s"  
