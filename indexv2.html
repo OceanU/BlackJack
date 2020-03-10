@@ -8,23 +8,31 @@
 	<link rel="stylesheet" type="text/css" href="stylev2.css">
 </head>
 <body>
+	<div id="pScore">
+		<p>Player's Score</p>
+		<p id="pScoreNum">0</p>
+	</div> <!-- container for keeping player's score -->
+	<div id="dScore">
+		<p>Dealer's Score</p>
+		<p id="dScoreNum">0</p>
+	</div> <!-- container for keeping dealer's score -->
 	<div id="table"> <!-- main container for table -->
-		<div id="dContainer"></div> <!-- dealer's container for initial cards -->
-		<div id="pContainer"></div> <!-- player's container for initial cards -->
-		<div id="dContainerExtraCards"></div> <!-- dealer's container for extra cards -->
-		<div id="pContainerExtraCards"></div> <!-- player's container for extra cards -->
-		<div id="dScore"></div> <!-- container for keeping dealer's score -->
-		<div id="pScore"></div> <!-- container for keeping player's score -->
-		<div id='card' class='c1'></div>  
-		<div id='card1' class='c2'></div>
-		<div id='card' class='c3'></div>
-		<div id='card' class='c4'></div>
+		<!-- <div id="dContainer"></div> --> <!-- dealer's container for initial cards -->
+		<!-- <div id="pContainer"></div> --> <!-- player's container for initial cards -->
+		<!-- <div id="dContainerExtraCards"></div> --> <!-- dealer's container for extra cards -->
+		<!-- <div id="pContainerExtraCards"></div> --> <!-- player's container for extra cards -->
+		<div id='card' class='pcard c1'></div>  <!-- dealer 1'st card -->
+		<div id='card1' class='pcard c2'></div> <!-- dealer 2nd card -->
+		<div id='card' class='pcard c3'></div>  <!-- player 1'st card -->
+		<div id='card' class='pcard c4'></div>  <!-- player 2nd card -->
 		<div id='reveal' class="dealerHidenCard"></div>
-<!-- 		<button type="button" onclick='myFunction()' class='bstart' id="btn1">Start</button>
-		<button type="button" onclick='reload()' class='breset'>Reset</button> --> <!-- am sa incerc sa folosesc acelasi buton si pentru start si pt reset  -->
-<!-- 		<button type="button" onclick='myFunction2()' class='bhit'>Hit</button>
-		<button type="button" onclick='stop()' class='bstop'>Stop</button>		 -->
+ 		<button type="button" onclick='startGame()' class='bstart btn btn-info' id="btn1">Start</button>
+		<button type="button" onclick='reload()' class='breset btn btn-info'>Reset</button> <!-- am sa incerc sa folosesc acelasi buton si pentru start si pt reset  -->
 	</div>
+		<div id="control">
+			<button type="button" onclick='' class='btn btn-lg btn-outline-success bhit'>Hit</button>
+			<button type="button" onclick='' class='btn btn-lg btn-outline-danger bstop'>Stop</button>		 	
+		</div>
 
 <script src="scriptv2.js"></script>
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script><!-- bootstrap -->
