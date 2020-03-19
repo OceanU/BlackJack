@@ -9,7 +9,7 @@
 	let handValuePlayerWithA = 0;
 	let handValueDealerWithA = 0;
 	let cardAux = 'c5';
-  	let container = 'container';
+  	var cardAuxContainer = 'cardAuxContainer';
 
 // alert("For a better experience, prees F11 to enter in full screen mode");
 // A
@@ -205,8 +205,8 @@ function checkDuplicate() {
 function dealResult(){
 	hitCard(playerHand, 1, 'c1');
 	hitCard(playerHand, 1, 'c2');
-	hitCard(playerHand, 1, 'c3');
-	hitCard(playerHand, 1, 'dealerHidenCard');  //security issue. can be seen from console 
+	hitCard(dealerHand, 1, 'c3');
+	hitCard(dealerHand, 1, 'dealerHidenCard');  //security issue. can be seen from console 
 	console.log("allCards",allCards,"\n", "player's hand",playerHand,"\n", "dealer's hand",dealerHand);
 }
 
@@ -295,6 +295,61 @@ function sumOfHand(whosHand, whosValue,varWithA,htmlElem) {
     function score() {
   		handValuePlayer = sumOfHand(playerHand, handValuePlayer,handValuePlayerWithA,'pScoreNum');
   };
+
+    function hit() {
+  	let divElem,divElem2; 
+  	divElem = document.createElement("DIV");
+  	divElem2 = document.createElement("DIV");
+
+	divElem2.setAttribute("id",'cardAuxContainer');
+	divElem.setAttribute("id","card");
+	console.log("container",document.getElementById(cardAuxContainer));
+	document.getElementById("table").appendChild(divElem2);
+	document.getElementById("cardAuxContainer").appendChild(divElem);     
+	divElem.setAttribute("class",cardAux);
+	// divElem.className += " newCardPosition";
+	hitCard(playerHand,1,cardAux);
+	
+	// var margin = '0px';
+	// margin = document.getElementsByClassName(cardAux)[0].style.marginTop += '10%';
+	cardAux = cardAux + 1;
+	//divv += 1;  //
+	// cardAuxContainer += "1";
+	score();
+
+  };
+
+  function stop() {
+	var fElem = document.getElementById('reveal');
+	document.getElementById('card1').innerHTML= fElem.innerHTML;
+	// document.getElementsByTagName("button")[2].removeAttribute('onclick'); 
+	// document.getElementsByTagName("button")[2].style.backgroundColor='black';
+	stopGame();
+
+	handValueDealer = sumOfHand(dealerHand, handValueDealer,handValueDealerWithA,'dScoreNum');
+	// if handValuePlayer > handValueDealer
+	// for(i = handValueDealer; i< handValuePlayer)
+	divElem2 = document.createElement("DIV");
+	// divElem2.setAttribute("id",'cardAuxContainer2');
+	document.getElementById("table").appendChild(divElem2.setAttribute("class",'newCardPositionDealer'));
+
+	while(handValueDealer< handValuePlayer) {
+		  	var divElem = document.createElement("DIV");
+			divElem.setAttribute("id","card");
+			document.getElementsByClassName("newCardPositionDealer").appendChild(divElem);     
+			// divElem.setAttribute("class",cardAux);
+			// divElem.className += " newCardPositionDealer";
+			hitCard(dealerHand,1,divElem.getAttribute('class',cardAux));
+			cardAux = cardAux + 1;  
+			handValueDealer = sumOfHand(dealerHand, handValueDealer,handValueDealerWithA,'dScoreNum'); // => e functia score care trebuie rectificata cu parametrii
+	}	
+	if (handValueDealer === handValuePlayer) {
+		document.getElementById('text').innerHTML='Tie !';
+	}else if(handValueDealer < handValuePlayer) {  //trebuie adaugata conditii concrete pe cifre
+		document.getElementById('text').innerHTML='You Win !';
+	}
+
+};
 
   function stopGame() {
 			document.getElementsByClassName("bhit")[0].style.display = "none";
