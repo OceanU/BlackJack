@@ -223,7 +223,10 @@ function hitCard(who, number, element) {
 	  	who.push(card);
 	}
 	console.log(card);
-	return document.getElementsByClassName(element)[0].innerHTML = card;
+	var textNode;
+	textNode = document.createTextNode(card);
+	console.log(document.getElementsByClassName(element)[0]);
+	return document.getElementsByClassName(element)[0].appendChild(textNode);
 }
 
 //this function calculate the sum of hand
@@ -231,7 +234,7 @@ function hitCard(who, number, element) {
 //2nd param - var where the result of sum will be stored 
 //3rd param - var where the result of sum will be stored in case of A is shot	
 function sumOfHand(whosHand, whosValue,varWithA,htmlElem) {
-	
+	debugger
 	for (var i = 0; i < whosHand.length; i++) {
 		 let handValue = whosHand[i].charAt(0);
 		 // console.log(whosHand[i].charAt(0));
@@ -253,6 +256,8 @@ function sumOfHand(whosHand, whosValue,varWithA,htmlElem) {
 		 };
 		 // document.getElementById(htmlElem).innerHTML(whosHand.value);
 		 console.log(whosHand);
+		 console.log(whosValue);
+
 		 if (whosValue > 21 && varWithA > 21) {
 		 	document.getElementById(htmlElem).innerHTML= "Busted!";
 		 	document.getElementById('pScoreNum').style.backgroundColor='red';
@@ -269,6 +274,7 @@ function sumOfHand(whosHand, whosValue,varWithA,htmlElem) {
 		 } else {
 		 	document.getElementById(htmlElem).innerHTML= whosValue;
 		 }
+ 
 	return whosValue; 	 
 		
 }
@@ -292,8 +298,9 @@ function sumOfHand(whosHand, whosValue,varWithA,htmlElem) {
     score();
   };
 
-    function score() {
+    function score() { //modificata functia cu parametri pentru curatarea codului
   		handValuePlayer = sumOfHand(playerHand, handValuePlayer,handValuePlayerWithA,'pScoreNum');
+  		// handValueDealer = sumOfHand(dealerHand, handValueDealer,handValueDealerWithA,'dScoreNum'); daca il las vizibil, vom vedea si scorul dealerului inainte de a apasa stop joc
   };
 
     function hit() {
@@ -321,7 +328,7 @@ function sumOfHand(whosHand, whosValue,varWithA,htmlElem) {
 
   function stop() {
 	var fElem = document.getElementById('reveal');
-	document.getElementById('card1').innerHTML= fElem.innerHTML;
+	document.getElementsByClassName('c4')[0].innerHTML= fElem.innerHTML;
 	// document.getElementsByTagName("button")[2].removeAttribute('onclick'); 
 	// document.getElementsByTagName("button")[2].style.backgroundColor='black';
 	stopGame();
@@ -330,23 +337,27 @@ function sumOfHand(whosHand, whosValue,varWithA,htmlElem) {
 	// if handValuePlayer > handValueDealer
 	// for(i = handValueDealer; i< handValuePlayer)
 	divElem2 = document.createElement("DIV");
+	divElem2.setAttribute("class",'newCardPositionDealer');
 	// divElem2.setAttribute("id",'cardAuxContainer2');
-	document.getElementById("table").appendChild(divElem2.setAttribute("class",'newCardPositionDealer'));
+	document.getElementById("table").appendChild(divElem2);
 
 	while(handValueDealer< handValuePlayer) {
 		  	var divElem = document.createElement("DIV");
 			divElem.setAttribute("id","card");
-			document.getElementsByClassName("newCardPositionDealer").appendChild(divElem);     
-			// divElem.setAttribute("class",cardAux);
+			document.getElementsByClassName('newCardPositionDealer')[0].appendChild(divElem);     
+			divElem.setAttribute("class",cardAux);
 			// divElem.className += " newCardPositionDealer";
-			hitCard(dealerHand,1,divElem.getAttribute('class',cardAux));
+			hitCard(dealerHand,1,cardAux);//divElem.getAttribute('class',cardAux));
 			cardAux = cardAux + 1;  
 			handValueDealer = sumOfHand(dealerHand, handValueDealer,handValueDealerWithA,'dScoreNum'); // => e functia score care trebuie rectificata cu parametrii
 	}	
+	debugger
 	if (handValueDealer === handValuePlayer) {
 		document.getElementById('text').innerHTML='Tie !';
 	}else if(handValueDealer < handValuePlayer) {  //trebuie adaugata conditii concrete pe cifre
 		document.getElementById('text').innerHTML='You Win !';
+	}else {
+		document.getElementById('text').innerHTML='You Lost !';
 	}
 
 };

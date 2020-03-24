@@ -3,3 +3,6 @@
 3) in situatia in care valoarea mainii player-ului este mica iar valoarea mainii dealer-ului o egaleaza, ramane egal chiar daca este loc de imbunataire. de consultat regulamaentul pt a vedea cine castiga in situatia asta (bug2.jpg)
 4) add action on blackjack and others
 5) bug3.jpg desi mai era loc de imbunatatire, dealer-ul nu a mai tras o carte
+6)bug1.v2 desi jucatorul nu a cumulat 21 puncte i-a fost afisat blackjack
+7)bug2.v2 daca depasesti 21 punct, butonul de reset apare peste cartea ta si nu mai vezi ce carte ai avut
+  si nici scorul nu mai este afisat fiind inlocuit cu textul BUSTED

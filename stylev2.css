@@ -52,25 +52,26 @@ body {
 	background-color: blue;
 	border: 3px solid white; /*also change under xxx px*/
 	border-radius: 10%;
+  display: inline-block;
 }
 
 #cardAuxContainer {
-	background-color: blue;
-	width: 100px;
-	height: 100px;
-	grid-column-start: 5;
+/*	width: 100px;
+	height: 100px;*/
+	grid-column-start: 4;
   	grid-column-end: 6;
-  	grid-row-start: 2;
-  	grid-row-end: 3;
-/*  	margin: auto;*/
+  	grid-row-start: 4;
+  	grid-row-end: 5;
+  	margin: auto;
 	display:inline-block;
+  z-index: 1;
 }
 
 .newCardPositionDealer {
-	grid-column-start: 4;
-  	grid-column-end: 5;
-  	grid-row-start: 1;
-  	grid-row-end: 2;
+	grid-column-start: 6;
+  	grid-column-end: 8;
+  	grid-row-start: 2;
+  	grid-row-end: 3;
   	margin: auto;
 }
 
@@ -122,15 +123,17 @@ body {
 	grid-column-start: 3;
   	grid-column-end: 7;
   	grid-row-start: 3;
-  	grid-row-end: 4;
+  	grid-row-end: 5;
   	margin: auto;
   	height: 20vh;
 	width: 30vw;
 	border-radius: 10%;
 	font-size: 400%;	
+  z-index: 2;
 }
 .breset {
 	display: none;
+  opacity: 0.5;
 }
 
 #control{
@@ -163,4 +166,14 @@ body {
   	grid-column-end: 2;
   	grid-row-start: 1;
   	grid-row-end: 4;
+}
+
+#result {
+  background-color: blue;
+  margin: auto;
+}
+
+#text {
+  text-align: center;
+  color: white;
 }
