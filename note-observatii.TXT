@@ -6,3 +6,8 @@
 6)bug1.v2 desi jucatorul nu a cumulat 21 puncte i-a fost afisat blackjack
 7)bug2.v2 daca depasesti 21 punct, butonul de reset apare peste cartea ta si nu mai vezi ce carte ai avut
   si nici scorul nu mai este afisat fiind inlocuit cu textul BUSTED
+8) pentru a scapa de variabilele tempWhosValue = 0;tempVarWithA = 0; de la sum of hand putem sa scriem ca dupa prima
+executie (verifica arrayul cu carti al jucatorului si daca are <2 face ceva, daca are > 2 face altceve) a functiei,
+ sa luam doar ultimul element din array (cel ce a fost introdus recent)
+9) suprapunerea mesajelor (se vede doar i modul debugger) exemplu: you win si dealer LOST
+10) bug5.v2 afiseaza you win in loc de tie si handValueDealerWithA este 0, ceea ce este gresit

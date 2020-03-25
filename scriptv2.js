@@ -234,41 +234,69 @@ function hitCard(who, number, element) {
 //2nd param - var where the result of sum will be stored 
 //3rd param - var where the result of sum will be stored in case of A is shot	
 function sumOfHand(whosHand, whosValue,varWithA,htmlElem) {
+	var tempWhosValue, tempVarWithA;
+	tempWhosValue = 0;
+	tempVarWithA = 0;
+
 	debugger
 	for (var i = 0; i < whosHand.length; i++) {
 		 let handValue = whosHand[i].charAt(0);
 		 // console.log(whosHand[i].charAt(0));
 		 if (handValue > 1 && handValue <= 9) {
 		 	handValue = parseInt(handValue)
-		 	whosValue = whosValue + handValue;
-		 	varWithA = varWithA + handValue;
+		 	tempWhosValue = tempWhosValue + handValue;
+		 	tempVarWithA = tempVarWithA + handValue;
 		 } else if (handValue === "J" || handValue === "Q" || handValue === "K" || handValue === "1" || handValue === "A") {
 		 	if (handValue === "A") {
-		 		varWithA = varWithA + 1;
-		 		whosValue = whosValue + 11;
+		 		tempVarWithA = tempVarWithA + 1;
+		 		tempWhosValue = tempWhosValue + 11;
 		 	} else {
 
 		 	handValue = 10;
-		 	varWithA = varWithA + handValue; 
-		 	whosValue = whosValue + handValue;
-		 	}		 		
+		 	tempVarWithA = tempVarWithA + handValue; 
+		 	tempWhosValue = tempWhosValue + handValue;
+		 	}	
+
 		 }
 		 };
+		 whosValue = tempWhosValue;
+		 tempWhosValue = 0;
+		 varWithA = tempVarWithA;
+		 tempVarWithA = 0;
 		 // document.getElementById(htmlElem).innerHTML(whosHand.value);
 		 console.log(whosHand);
 		 console.log(whosValue);
 
+		 var person,player,dealer;
+		 person = "a";
+		 player = "player";
+		 dealer = "dealer";
+		 if (handValueDealer < handValuePlayer) {
+		 	person = dealer;
+		 }else {
+		 	person= player;
+		 }
+
 		 if (whosValue > 21 && varWithA > 21) {
-		 	document.getElementById(htmlElem).innerHTML= "Busted!";
+		 	document.getElementById(htmlElem).innerHTML += "Busted!";
 		 	document.getElementById('pScoreNum').style.backgroundColor='red';
 		 	document.getElementById('pScoreNum').style.textAlign='center';
+		 	document.getElementById('text').innerHTML=`${person} BUSTED!`;
 			stopGame();
 		 	btnReset();
 		 } else if (whosValue === 21 || varWithA === 21) {
 		 	stopGame();
+		 	btnReset();
 		 	document.getElementById(htmlElem).innerHTML= "BlackJack!";
+		 	document.getElementById('text').innerHTML='BLACKJACK!';
+			
+			var fElem = document.getElementById('reveal');   //functie noua reveal() ce arata cartile dealerului
+ 			document.getElementsByClassName('c4')[0].innerHTML= fElem.innerHTML;
+ 			sumOfHand(dealerHand, handValueDealer,handValueDealerWithA,'dScoreNum');
+
 		 } else if (whosValue > 21 && varWithA != 21) {
 		 	document.getElementById(htmlElem).innerHTML= varWithA;
+		 	// whosValue = varWithA; 
 		 }  else if (varWithA < whosValue) {
 		 	document.getElementById(htmlElem).innerHTML= whosValue + `/` + varWithA;
 		 } else {
@@ -327,8 +355,8 @@ function sumOfHand(whosHand, whosValue,varWithA,htmlElem) {
   };
 
   function stop() {
-	var fElem = document.getElementById('reveal');
-	document.getElementsByClassName('c4')[0].innerHTML= fElem.innerHTML;
+	var fElem = document.getElementById('reveal');   //functie noua reveal() ce arata cartile dealerului
+ 	document.getElementsByClassName('c4')[0].innerHTML= fElem.innerHTML;
 	// document.getElementsByTagName("button")[2].removeAttribute('onclick'); 
 	// document.getElementsByTagName("button")[2].style.backgroundColor='black';
 	stopGame();
@@ -352,10 +380,17 @@ function sumOfHand(whosHand, whosValue,varWithA,htmlElem) {
 			handValueDealer = sumOfHand(dealerHand, handValueDealer,handValueDealerWithA,'dScoreNum'); // => e functia score care trebuie rectificata cu parametrii
 	}	
 	debugger
-	if (handValueDealer === handValuePlayer) {
-		document.getElementById('text').innerHTML='Tie !';
-	}else if(handValueDealer < handValuePlayer) {  //trebuie adaugata conditii concrete pe cifre
+	if ((handValuePlayer === 21) || (handValueDealer === 21)) {
+		document.getElementById('text').innerHTML='BLACKJACK!';
+	}else if (handValueDealer === handValuePlayer) {
+		document.getElementById('text').innerHTML ='Tie !';
+		btnReset();
+	}else if((handValueDealer < handValuePlayer) || ((handValueDealer > handValuePlayer) && (handValueDealer > 21) )) {  //trebuie adaugata conditii concrete pe cifre
 		document.getElementById('text').innerHTML='You Win !';
+		btnReset();
+	}else if ((handValueDealer < handValuePlayer) && (handValueDealer === 21) ) {
+		document.getElementById('text').innerHTML='You Lost !';
+		btnReset();
 	}else {
 		document.getElementById('text').innerHTML='You Lost !';
 	}
