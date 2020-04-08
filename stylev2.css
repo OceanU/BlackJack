@@ -34,7 +34,7 @@ body {
 
 #table {
   background-color: transparent;
-	border: 5px green solid;
+	border: 5px transparent solid;
 	border-radius: 30%;
 	grid-column-start: 2;
   	grid-column-end: 4;
@@ -61,6 +61,7 @@ body {
 	border: 3px solid white; /*also change under xxx px*/
 	border-radius: 10%;
   display: inline-block;
+  color: white;
 }
 
 #cardAuxContainer {

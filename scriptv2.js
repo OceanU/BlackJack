@@ -238,7 +238,7 @@ function sumOfHand(whosHand, whosValue,varWithA,htmlElem) {
 	tempWhosValue = 0;
 	tempVarWithA = 0;
 
-	debugger
+
 	for (var i = 0; i < whosHand.length; i++) {
 		 let handValue = whosHand[i].charAt(0);
 		 // console.log(whosHand[i].charAt(0));
@@ -379,7 +379,7 @@ function sumOfHand(whosHand, whosValue,varWithA,htmlElem) {
 			cardAux = cardAux + 1;  
 			handValueDealer = sumOfHand(dealerHand, handValueDealer,handValueDealerWithA,'dScoreNum'); // => e functia score care trebuie rectificata cu parametrii
 	}	
-	debugger
+
 	if ((handValuePlayer === 21) || (handValueDealer === 21)) {
 		document.getElementById('text').innerHTML='BLACKJACK!';
 	}else if (handValueDealer === handValuePlayer) {

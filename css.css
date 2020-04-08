@@ -10,7 +10,7 @@ body {
 		background-image: : url('bjtab.jpeg');
 	background-size: cover;
 }
-/*
+
 #table {
 	height: 100%;
 	width: 80%;
@@ -147,9 +147,9 @@ body {
   	grid-row-start: 3;
   	grid-row-end: 4;
   	margin-top: -10px;
-}*/
+}
 ..............................
-/*#pScoreNum {
+#pScoreNum {
 	text-align: center;
 }
 
@@ -164,4 +164,4 @@ body {
 #text {
 	text-align: center;
 	color: white;
-}*/
+}

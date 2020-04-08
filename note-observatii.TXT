@@ -11,3 +11,18 @@ executie (verifica arrayul cu carti al jucatorului si daca are <2 face ceva, dac
  sa luam doar ultimul element din array (cel ce a fost introdus recent)
 9) suprapunerea mesajelor (se vede doar i modul debugger) exemplu: you win si dealer LOST
 10) bug5.v2 afiseaza you win in loc de tie si handValueDealerWithA este 0, ceea ce este gresit
+
+
+
+
+idei
+1) la sfarsitul partidei, click oriunde pentru a incepe una noua
+2)pagina de start pentru joc, cu scris pe mijlic bj, nise carti eventual chip-uri si buton de play 
+3)cum pot face sa se memoreze daca un jucator a avut un joc precedent si dupa ce intra in joc si da play sa 
+il intrebe daca vrea sa continue jocul precedent sau doreste sa inceapta un nou joc
+4) voce de dealer. cum ar fi place your bets,please
+5)muzica jazz in fundal
+6) cartile trebuie sa plece spre dealer cu o animatie, ca si cum dealerul le ia la sfarsitul jocului
+7) jucataroul sa poata paria pt mai multe jocuri in acelasi timp.
+8)on hover  pe spatiul destinat unui jucator sa iasa in evidenta deschizandu-se la culoare
+9) dealerul trebuie sa traga daca are mai putin de 16 si sa se opreasca daca are mai mult sau egal de 17
