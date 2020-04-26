@@ -313,14 +313,58 @@ function sumOfHand(whosHand, whosValue,varWithA,htmlElem) {
 // deal & display cards
 
   function startGame() {	
+
+  	// var no = Math.floor((Math.random() * 700 - 500) + 500);
+  	// var rand = `rotate(${no}deg);`
+
+
     document.getElementsByClassName("bhit")[0].style.display = "inline-block";
     document.getElementsByClassName("bstop")[0].style.display = "inline-block";
     document.getElementsByClassName("bstart")[0].style.display = "none";
     
-    document.getElementsByClassName("pcard")[0].style.display = "inline";
-    document.getElementsByClassName("pcard")[1].style.display = "inline";
-    document.getElementsByClassName("pcard")[2].style.display = "inline";
-    document.getElementsByClassName("pcard")[3].style.display = "inline";
+
+    setTimeout(function(){
+    	var c2 = document.getElementsByClassName("c2")[0] 
+    	c2.style.display = "inline";
+    	c2.classList.add('spinner');   //it's more correct than setAtribute, because set attribute overwritte all classes
+        // c2.setAttribute("class",'spinner');
+        // document.getElementsByClassName("spinner")[0].style.animation="playerMove 1.2s 1";
+        // document.getElementsByClassName("spinner")[0].style.animationFillMode = "forwards";
+        console.log(c2)
+    },1);
+
+setTimeout(function(){
+    	var c3 = document.getElementsByClassName("c3")[0]; 
+    	c3.style.display = "inline";
+    	c3.classList.add('spinner');
+
+        console.log(c3)
+},1000);
+
+
+setTimeout(function(){
+    	var c1 = document.getElementsByClassName("c1")[0]; 
+    	c1.style.display = "inline";
+    	c1.classList.add('spinner');
+    	            document.getElementsByClassName("spinner")[0].style.animation="playerMove1 1.2s 1";
+        document.getElementsByClassName("spinner")[0].style.animationFillMode = "forwards";
+    	console.log(c1)
+},2000);
+
+setTimeout(function(){
+    	var c4 = document.getElementsByClassName("c4")[0]; 
+    	c4.style.display = "inline";
+    	c4.classList.add('spinner');
+    	console.log(c4)	
+},3000);
+
+
+    // document.getElementsByClassName("c3")[0].style.display = "inline";
+    //     document.getElementsByClassName("c3")[0].setAttribute("class",'spinner');
+    // // document.getElementsByClassName("pcard")[3].style.display = "inline";
+
+    //     document.getElementsByClassName("c4")[0].style.display = "inline";
+    //     document.getElementsByClassName("c4")[0].setAttribute("class",'spinner');
 
     dealResult();
     score();
@@ -413,3 +457,8 @@ function reload(){
   function delay() {
 
   };
+
+
+  function spin() {
+	document.getElementById('firstLayer').setAttribute('class','spinner');
+}

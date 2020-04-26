@@ -57,12 +57,60 @@ body {
 #card,#card1 {
 	height: 10vh;
 	width: 7vh;
-	background-color: blue;
+/*	background-color: blue;*/
 	border: 3px solid white; /*also change under xxx px*/
 	border-radius: 10%;
-  display: inline-block;
+/*  display: inline-block;*/
   color: white;
+
+    background-image: url('pattern blue.jpg');
+  background-repeat: repeat;
+    background-size: 70% 70%;
 }
+
+
+.spinner {
+        position: relative;
+  animation: playerMove 1.2s 1;
+    animation-fill-mode: forwards; /*permite sa se retina pozitia ultimului keyframe*/
+    animation-timing-function: ease;
+}
+
+
+@keyframes playerMove {
+  from {top: -70vh;}
+  to {top: 0;
+      transform: rotate(600deg);
+  }
+}
+
+@keyframes playerMove1 {
+  from {top: -70vh;}
+  to {top: 0;
+      transform: rotate(400deg);
+  }
+}
+
+@keyframes playerMove2 {
+  from {top: -70vh;}
+  to {top: 0;
+      transform: rotate(400deg);
+  }
+}
+
+@keyframes playerMove3 {
+  from {top: -70vh;}
+  to {top: 0;
+      transform: rotate(400deg);
+  }
+}
+
+/*@keyframes dealerMove {
+  from {top: -40vh;}
+  to {top: 0;
+      transform: rotate(660deg);
+/*    left: 100px;*/
+/*}*/
 
 #cardAuxContainer {
 /*	width: 100px;
