@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <!-- bootstrap link -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> <!-- bootstrap link -->
 	<link rel="stylesheet" type="text/css" href="stylev2.css">
+	<link rel="stylesheet" type="text/css" href="deckstyle.css">
 
 </head>
 <body>
@@ -31,6 +32,43 @@
 			<div id='card' class='pcard c3'></div>  <!-- player 1'st card -->
 			<div id='card' class='pcard c4'></div>  <!-- player 2nd card -->
 			<div id='reveal' class="dealerHidenCard"></div>
+				<!-- card after deal -->
+				<div id="container">
+					<div id="tamplate">
+						<div id="firstLayer">
+							<span id="topLeftElement">
+								<span class="cardValue">K</span>
+								<span class="symbol">♣</span>
+							</span>
+							<div id="secondLayer">
+							</div>
+							<span id="bottomRightElement">
+								<span class="cardValue">K</span>
+								<span class="symbol">♣</span>
+							</span>
+						</div>
+					</div>
+				</div>
+				<div id="container2">
+					<div id="tamplate">
+						<div id="firstLayer">
+							<span id="topLeftElement">
+								<span>K</span>
+								<span id="symbol">♣</span>
+							</span>
+							<div id="secondLayer">
+			<!-- 					<span id="topHalf"></span>
+								<span id="bottomHalf"></span> -->
+								<span id="test"><span>
+							</div>
+							<span id="bottomRightElement">
+								<span>K</span>
+								<span id="symbol">♣</span>
+							</span>
+						</div>
+					</div>
+				</div>
+
 	 		<button type="button" onclick='startGame()' class='bstart btn btn-info' id="btn1">Start</button>
 			<button type="button" onclick='reload()' class='breset btn btn-info'>Reset</button> <!-- am sa incerc sa folosesc acelasi buton si pentru start si pt reset  -->
 		</div>
@@ -40,6 +78,8 @@
 			</div>
 		
 	</div>
+	
+
 
 
 <script src="scriptv2.js"></script>

@@ -11,6 +11,8 @@
 	let cardAux = 'c5';
   	var cardAuxContainer = 'cardAuxContainer';
 
+  	let symbol= 0;
+
 // alert("For a better experience, prees F11 to enter in full screen mode");
 // A
 // ||
@@ -203,7 +205,12 @@ function checkDuplicate() {
 
 //hit 2 cards for each player
 function dealResult(){
+	document.getElementById("container").style.display = "block";
 	hitCard(playerHand, 1, 'c1');
+	document.getElementsByClassName("cardValue")[0].innerHTML=playerHand[0].charAt(0);
+	document.getElementsByClassName("symbol")[0].innerHTML=playerHand[0].slice(-1);
+		document.getElementsByClassName("cardValue")[1].innerHTML=playerHand[0].charAt(0);
+	document.getElementsByClassName("symbol")[1].innerHTML=playerHand[0].slice(-1);
 	hitCard(playerHand, 1, 'c2');
 	hitCard(dealerHand, 1, 'c3');
 	hitCard(dealerHand, 1, 'dealerHidenCard');  //security issue. can be seen from console 
@@ -323,48 +330,43 @@ function sumOfHand(whosHand, whosValue,varWithA,htmlElem) {
     document.getElementsByClassName("bstart")[0].style.display = "none";
     
 
-    setTimeout(function(){
-    	var c2 = document.getElementsByClassName("c2")[0] 
-    	c2.style.display = "inline";
-    	c2.classList.add('spinner');   //it's more correct than setAtribute, because set attribute overwritte all classes
-        // c2.setAttribute("class",'spinner');
-        // document.getElementsByClassName("spinner")[0].style.animation="playerMove 1.2s 1";
-        // document.getElementsByClassName("spinner")[0].style.animationFillMode = "forwards";
-        console.log(c2)
-    },1);
+//     setTimeout(function(){
+//     	var c2 = document.getElementsByClassName("c2")[0] 
+//     	c2.style.display = "inline";
+//     	c2.classList.add('spinner');   //it's more correct than setAtribute, because set attribute overwritte all classes
+//         // c2.setAttribute("class",'spinner');
+//         // document.getElementsByClassName("spinner")[0].style.animation="playerMove 1.2s 1";
+//         // document.getElementsByClassName("spinner")[0].style.animationFillMode = "forwards";
+//         console.log(c2)
+//     },1);
 
-setTimeout(function(){
-    	var c3 = document.getElementsByClassName("c3")[0]; 
-    	c3.style.display = "inline";
-    	c3.classList.add('spinner');
+// setTimeout(function(){
+//     	var c3 = document.getElementsByClassName("c3")[0]; 
+//     	c3.style.display = "inline";
+//     	c3.classList.add('spinner');
 
-        console.log(c3)
-},1000);
-
-
-setTimeout(function(){
-    	var c1 = document.getElementsByClassName("c1")[0]; 
-    	c1.style.display = "inline";
-    	c1.classList.add('spinner');
-    	            document.getElementsByClassName("spinner")[0].style.animation="playerMove1 1.2s 1";
-        document.getElementsByClassName("spinner")[0].style.animationFillMode = "forwards";
-    	console.log(c1)
-},2000);
-
-setTimeout(function(){
-    	var c4 = document.getElementsByClassName("c4")[0]; 
-    	c4.style.display = "inline";
-    	c4.classList.add('spinner');
-    	console.log(c4)	
-},3000);
+//         console.log(c3)
+// },1000);
 
 
-    // document.getElementsByClassName("c3")[0].style.display = "inline";
-    //     document.getElementsByClassName("c3")[0].setAttribute("class",'spinner');
-    // // document.getElementsByClassName("pcard")[3].style.display = "inline";
+// setTimeout(function(){
+//     	var c1 = document.getElementsByClassName("c1")[0]; 
+//     	c1.style.display = "inline";
+//     	c1.classList.add('spinner');
+//     	            document.getElementsByClassName("spinner")[0].style.animation="playerMove1 1.2s 1";
+//         document.getElementsByClassName("spinner")[0].style.animationFillMode = "forwards";
+//     	console.log(c1)
+// },2000);
 
-    //     document.getElementsByClassName("c4")[0].style.display = "inline";
-    //     document.getElementsByClassName("c4")[0].setAttribute("class",'spinner');
+// setTimeout(function(){
+//     	var c4 = document.getElementsByClassName("c4")[0]; 
+//     	c4.style.display = "inline";
+//     	c4.classList.add('spinner');
+//     	console.log(c4)	
+// },3000);
+
+
+
 
     dealResult();
     score();
@@ -462,3 +464,7 @@ function reload(){
   function spin() {
 	document.getElementById('firstLayer').setAttribute('class','spinner');
 }
+
+
+
+document.getElementById("symbol").innerHTML = symbol;
